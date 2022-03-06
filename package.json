@@ -1,0 +1,75 @@
+{
+  "name": "discuss-clone",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "3.6.0-beta.2",
+    "@auth0/auth0-react": "1.9.0",
+    "@testing-library/jest-dom": "5.16.2",
+    "@testing-library/react": "12.1.3",
+    "@testing-library/user-event": "13.5.0",
+    "@types/jest": "27.4.1",
+    "@types/react": "17.0.39",
+    "@types/react-dom": "17.0.13",
+    "add": "2.0.6",
+    "graphql": "15.5.1",
+    "luxon": "2.3.1",
+    "postcss-import": "14.0.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "6.2.2",
+    "react-scripts": "5.0.0",
+    "semantic-ui-css": "2.4.1",
+    "semantic-ui-react": "2.1.2",
+    "tailwindcss": "3.0.23",
+    "tslib": "2.3.1",
+    "typescript": "4.6.2",
+    "use-sync-external-store": "1.0.0-rc.0",
+    "yarn": "2.4.3"
+  },
+  "scripts": {
+    "start": "yarn run build:css && react-scripts start",
+    "build": "yarn run build:css && react-scripts build",
+    "build:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "generate-types": "graphql-codegen --config codegen.yml",
+    "load-data": "ts-node -O '{\"module\": \"commonjs\"}' deploy/dev-setup/load-data.ts",
+    "deploy-slash": "node deploy/SlashGraphQL/deploy.js",
+    "deploy-auth0": "node deploy/Auth0/deploy.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/add": "^1.15.4",
+    "@graphql-codegen/cli": "^1.15.4",
+    "@graphql-codegen/named-operations-object": "^1.17.8",
+    "@graphql-codegen/near-operation-file-preset": "^1.15.4",
+    "@graphql-codegen/typescript": "^1.15.4",
+    "@graphql-codegen/typescript-operations": "^1.15.4",
+    "@graphql-codegen/typescript-react-apollo": "^1.15.4",
+    "@types/faker": "^4.1.12",
+    "@types/luxon": "^1.24.1",
+    "@types/node": "^12.0.0",
+    "@types/react-router-dom": "^5.1.5",
+    "auth0": "^2.27.1",
+    "autoprefixer": "^9.8.6",
+    "cross-fetch": "^3.0.5",
+    "dotenv": "^8.2.0",
+    "faker": "^4.1.0",
+    "graphql-request": "^3.0.0",
+    "jwks-rsa": "^1.9.0",
+    "postcss-cli": "^7.1.2",
+    "readline-sync": "^1.4.10",
+    "ts-node": "^8.10.2"
+  }
+}
